@@ -1,0 +1,4 @@
+nop +1
+acc +46
+jmp -2
+acc +11
