@@ -1,0 +1,59 @@
+Al => Th,F
+Al => Th,Rn,F,Ar
+B => B,Ca
+B => Ti,B
+B => Ti,Rn,F,Ar
+Ca => Ca,Ca
+Ca => P,B
+Ca => P,Rn,F,Ar
+Ca => Si,Rn,F,Y,F,Ar
+Ca => Si,Rn,Mg,Ar
+Ca => Si,Th
+F => Ca,F
+F => P,Mg
+F => Si,Al
+H => CRn,Al,Ar
+H => CRn,F,Y,F,Y,F,Ar
+H => CRn,F,Y,Mg,Ar
+H => CRn,Mg,Y,F,Ar
+H => H,Ca
+H => N,Rn,F,Y,F,Ar
+H => N,Rn,Mg,Ar
+H => N,Th
+H => O,B
+H => O,Rn,F,Ar
+Mg => B,F
+Mg => Ti,Mg
+N => C,Rn,F,Ar
+N => H,Si
+O => CRn,F,Y,F,Ar
+O => CRn,Mg,Ar
+O => H,P
+O => N,Rn,F,Ar
+O => O,Ti
+P => Ca,P
+P => P,Ti
+P => Si,Rn,F,Ar
+Si => Ca,Si
+Th => Th,Ca
+Ti => B,P
+Ti => Ti,Ti
+e => H,F
+e => N,Al
+e => O,Mg
+
+CRn,Ca,Ca,Ca,Si,Rn,B,P,Ti,Mg,Ar,Si,Rn,Si,Rn,Mg,Ar,Si,Rn,Ca,F,Ar,Ti,Ti,B,Si,Th,F,Y,Ca,F,Ar,Ca,Ca,Si,Th,Ca,P,B,Si,Th,Si,Th,Ca,Ca,P,Ti,Rn,P,B,Si,Th,Rn,F,Ar,Ar,Ca,Ca,Si,Th,Ca,Si,Th,Si,Rn,Mg,Ar,Ca,P,Ti,B,P,Rn,F,Ar,Si,Th,Ca,Si,Rn,F,Ar,B,Ca,Si,Rn,Ca,P,Rn,F,Ar,P,Mg,Y,Ca,F,Ar,Ca,P,Ti,Ti,Ti,B,P,B,Si,Th,Ca,P,Ti,B,P,B,Si,Rn,F,Ar,B,P,B,Si,Rn,Ca,F,Ar,B,P,Rn,Si,Rn,F,Ar,Rn,Si,Rn,B,F,Ar,Ca,F,Ar,Ca,Ca,Ca,Si,Th,Si,Th,Ca,Ca,P,B,P,Ti,Ti,Rn,F,Ar,Ca,P,Ti,B,Si,Al,Ar,P,B,Ca,Ca,Ca,Ca,Ca,Si,Rn,Mg,Ar,Ca,Si,Th,F,Ar,Th,Ca,Si,Th,Ca,Si,Rn,Ca,F,Y,Ca,Si,Rn,F,Y,F,Ar,F,Ar,Ca,Si,Rn,F,Y,F,Ar,Ca,Si,Rn,B,P,Mg,Ar,Si,Th,P,Rn,F,Ar,Ca,Si,Rn,F,Ar,Ti,Rn,Si,Rn,F,Y,F,Ar,Ca,Si,Rn,B,F,Ar,Ca,Si,Rn,Ti,Mg,Ar,Si,Th,Ca,Si,Th,Ca,F,Ar,P,Rn,F,Ar,Si,Rn,F,Ar,Ti,Ti,Ti,Ti,B,Ca,Ca,Si,Rn,Ca,Ca,F,Y,F,Ar,Si,Th,Ca,P,Ti,B,P,Ti,B,Ca,Si,Th,Si,Rn,Mg,Ar,Ca,F
+
+Al,Ar,B,Ca,CRn,e,F,H,Mg,N,O,P,Rn,Si,Th,Ti,Y
+Ar = )
+Rn = (
+Y = ,
+e = start
+
+Th :
+	left Th
+	right Ca
+
+Al :	left Th
+
+
