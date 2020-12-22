@@ -1,0 +1,48 @@
+abc
+def
+ghi
+
+
+ghi
+def
+abc
+
+flip :
+	n <- s
+	s <- n
+	e <- reversed(e)
+	w <- reversed(w)
+
+
+gda
+heb
+ifc
+
+rotating 90 :
+	w <- n
+	s <- reversed(w)
+	e <- s
+	n <- reversed(e)
+
+ihg
+fed
+cba
+
+rotating 180 :
+	n <- reversed(s)
+	w <- reversed(e)
+	s <- reversed(n)
+	e <- reversed(w)
+cfi
+beh
+adg
+
+rotating 270 :
+	n <- w
+	w <- reversed(s)
+	s <- e
+	e <- reversed(n)
+
+
+
+
