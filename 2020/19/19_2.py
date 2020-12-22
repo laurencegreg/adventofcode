@@ -25,7 +25,7 @@ while ':' in lines[it] :
 
 subStates = list(dicoRules.keys())
 
-while len(subStates) != 0 :
+while not set(["42","31"]).issubset(dicoFinals.keys())  :
     for name in  subStates :
         if sum(list(map(lambda l : set(l).issubset(dicoFinals.keys()),dicoRules[name]))) == len(dicoRules[name]) :
             print("compute for state "+name)
@@ -49,11 +49,44 @@ while len(subStates) != 0 :
     subStates = list(set(dicoRules.keys()) - set(dicoFinals.keys()))
 
 
-print(sum(list(map(lambda line : 1 if line.strip("\n") in dicoFinals["0"] else 0,lines[it+1:]))))
 
+dico31 = dicoFinals["31"]
+dico42 = dicoFinals["42"]
+print(dico31)
+#print(min(list(map(len,dico31))))
+#print(max(list(map(len,dico31))))
+print(dico42)
+#print(min(list(map(len,dico42))))
+#print(max(list(map(len,dico42))))
+# 0 -> 42^x 42^y 31^y  x>0 y>0
 
+n = max(list(map(len,dico42)))
+print(n)
 
+def trad (s) :
+    if len(s)==8 :
+        if s in dico31 :
+            return "31"
+        elif s in dico42 :
+            return "42"
+    return s
 
+count = 0
+for line in lines[it+1:] :
+    line = line.strip("\n")
+    if len(line) % n == 0 and len(line) // n >= 3 :
+        splitted = [line[i:i+n] for i in range(0, len(line), n)]
+        print(splitted)
+        statesList = list(map(trad,splitted))
+        if statesList[0]=="42" and statesList[-1]=="31" and sum(list(map(lambda x : 1 if x == "42" else 0,statesList))) > sum(list(map(lambda x : 1 if x == "31" else 0,statesList))) :
+            print(statesList)
+            status = True
+            state = statesList[0]
+            for i in range(1,len(statesList)) :
+                if statesList[i]!=state and statesList[i] == "42":
+                    status = False
+                state=statesList[i]
+            if status :
+                count+=1
 
-
-
+print(count)
