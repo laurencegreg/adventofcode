@@ -67,7 +67,7 @@ for line in lines :
 currentPiece.build()
 pieces.append(currentPiece)
 
-matchedPieces = []
+matchedPieces =computedPiece.match(piece) []
 while len(pieces)>0 :
     computedPiece = pieces.pop()
     for piece in pieces :
