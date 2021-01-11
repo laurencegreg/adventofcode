@@ -37,6 +37,10 @@ for line in lines :
         setTiles.remove((x,y))
     else :
         setTiles.add((x,y))
+
+print(len(setTiles))
+
+
 def getNeighbourhood():
     neighbourhood = set()
     for tile in setTiles :
