@@ -24,10 +24,10 @@ for line in lines :
     if line == '\n':
         nbValid = passport.count(True) 
         if nbValid==8 or (nbValid==7 and not passport[fieldsIndex.index("cid")]) :
-            print(passportValues)
+            print(passportValues[3])
             valids+=1
-        else :
-            print(passportValues)
+        #else :
+            #print(passportValues)
         passport = list(basic)
         passportValues = list(basicValues)
     fields = line.split(" ")
@@ -40,6 +40,6 @@ for line in lines :
 nbValid = passport.count(True) 
 
 if nbValid==8 or (nbValid==7 and not passport[fieldsIndex.index("cid")]) :
-    print(passportValues)
+    print(passportValues[3])
     valids+=1
 print(valids)
