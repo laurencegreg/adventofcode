@@ -8,13 +8,6 @@ import (
 	"strconv"
 )
 
-func sum(array [3]int) int {  
-	result := 0  
-	for _, v := range array {  
-		result += v  
-	}  
-	return result  
-} 
 func main() {
     file, err := os.Open("input")
     if err != nil {
@@ -27,18 +20,14 @@ func main() {
 	count := 0
 	it := 0
 	newVal := 0
-	oldSum := 0
-	newSum := 0
     for scanner.Scan() {
         newVal, err = strconv.Atoi(scanner.Text())
-		a[it%3] = newVal
 		if (it>=2){
-			newSum= sum(a)
-			if (it>2 && newSum>oldSum){
+			if (it>2 && a[it%3]<newVal){
 				count++
 			}
 		}
-		oldSum = newSum
+		a[it%3] = newVal
 		it++
     }
 
