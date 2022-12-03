@@ -11,6 +11,9 @@ import (
 	"time"
 )
 
+var megax int
+var megay int
+
 func toInt(s string) int {
 	i, _ := strconv.Atoi(s)
 	return i
@@ -34,9 +37,9 @@ func printDots(dots [][2]int, x int, y int) {
 	for i := 0; i < x; i++ {
 		for j := 0; j < y; j++ {
 			if in([2]int{j, i}, dots) {
-				fmt.Print("# ")
+				fmt.Print("#")
 			} else {
-				fmt.Print(". ")
+				fmt.Print(".")
 			}
 		}
 
@@ -52,10 +55,12 @@ func fold(dots [][2]int, c string, i int) [][2]int {
 		x := pos[0]
 		y := pos[1]
 		if c == "x" {
+			megax = i
 			if x > i {
 				x = i - (x - i)
 			}
 		} else {
+			megay = i
 			if y > i {
 				y = i - (y - i)
 			}
@@ -70,6 +75,9 @@ func fold(dots [][2]int, c string, i int) [][2]int {
 }
 
 func main() {
+
+	megax = 895
+	megay = 1310
 	defer timeTrack(time.Now())
 	file, err := os.Open("input")
 	if err != nil {
@@ -87,11 +95,12 @@ func main() {
 			if len(match) != 0 {
 				dots = fold(dots, match[1], toInt(match[2]))
 				fmt.Println(len(dots))
+				printDots(dots, megay, megax)
 			} else {
 				line := strings.Split(s, ",")
 				dots = append(dots, [2]int{toInt(line[0]), toInt(line[1])})
 			}
 		}
 	}
-	printDots(dots, 6, 39)
+
 }
