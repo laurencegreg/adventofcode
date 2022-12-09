@@ -8,9 +8,11 @@ var ty = 0;
 
 var mx = {"R":1,"L":-1,"U":0,"D":0}
 var my = {"R":0,"L":0,"U":1,"D":-1}
-const pos = new Set()
+const pos10 = new Set()
+const pos2 = new Set()
 const rope = Array.from({length: 10}, () => [0,0])
-pos.add("0:0")
+pos10.add("0:0")
+pos2.add("0:0")
 allFileContents.split(/\r?\n/).forEach(line =>  {
   if ((line!="")){
     const splitted = line.split(" ");
@@ -35,12 +37,14 @@ allFileContents.split(/\r?\n/).forEach(line =>  {
             i++;
 
         }
-        pos.add(`${rope[9][0]}:${rope[9][1]}`)
+        pos10.add(`${rope[9][0]}:${rope[9][1]}`);
+        pos2.add(`${rope[1][0]}:${rope[1][1]}`)
     }
   }
 });
 
-console.log(pos.size)
+console.log(`part 1 : ${pos2.size}`)
+console.log(`part 2 : ${pos10.size}`)
 
 const used = process.memoryUsage().heapUsed / 1024 / 1024;
 console.log(`The script uses approximately ${Math.round(used * 100) / 100} MB`);
