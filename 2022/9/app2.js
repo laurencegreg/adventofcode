@@ -1,10 +1,6 @@
 const fs = require('fs');
 var start = new Date();
 const allFileContents = fs.readFileSync('input', 'utf-8');
-var hx = 0;
-var hy = 0;
-var tx = 0;
-var ty = 0;
 
 var mx = {"R":1,"L":-1,"U":0,"D":0}
 var my = {"R":0,"L":0,"U":1,"D":-1}
