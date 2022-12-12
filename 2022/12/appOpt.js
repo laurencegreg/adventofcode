@@ -30,7 +30,7 @@ while(!start || !end){
 }
 print = function(arr){
     for (const line of arr){
-        console.log(line.map(x=>x==40?'.':x).join(''))
+        console.log(line.map(x=>x==7224?'.':x).join(''))
     }
 }
 step = function(i,j){
