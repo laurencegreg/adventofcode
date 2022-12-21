@@ -39,21 +39,32 @@ allFileContents.split(/\r?\n/).forEach(line => {
     }
 });
 
-var i = 3221245824363;
-console.log("human : "+monkeys["humn"]())
-console.log("rootLeft : "+monkeys["rootLeft"]())
-console.log("rootRigh : "+monkeys["rootRight"]())
-monkeys["humn"]=function(){return i};
+var step = 1;
+monkeys["humn"]=function(){return step};
+const target = monkeys["rootRight"]();
+var left = monkeys["rootLeft"]();
+while(left>target){
+    step*=10;
+    monkeys["humn"]=function(){return step};
+    left =  monkeys["rootLeft"]();
+}
 
-console.log("human : "+monkeys["humn"]())
-console.log("rootLeft : "+monkeys["rootLeft"]())
-console.log("rootRigh : "+monkeys["rootRight"]())
-console.log(monkeys["root"]())
-//while(!monkeys["root"]()){
-//    i++;
-//    monkeys["humn"]=function(){return i};
-//}
-console.log(i)
+var humanUp = step;
+var humanDown = step;
+while(!monkeys["root"]()){
+humanDown = humanUp;
+step /= 10;
+monkeys["humn"]=function(){return humanDown};
+left =  monkeys["rootLeft"]();
+while(left<target){
+    humanUp = humanDown;
+    humanDown -=step;
+    monkeys["humn"]=function(){return humanDown};
+    left =  monkeys["rootLeft"]();
+}
+}
+console.log("step 2 : "+monkeys["humn"]())
+
 const used = process.memoryUsage().heapUsed / 1024 / 1024;
 console.log(`The script uses approximately ${Math.round(used * 100) / 100} MB`);
 var end = new Date() - start;
