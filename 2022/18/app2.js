@@ -59,7 +59,6 @@ for (x = xMin; x <= xMax; x++) {
     for (y = yMin; y <= yMax; y++) {
         for (z = zMin; z <= zMax; z++) {
             if (!cubePos.has(x + "," + y + "," + z)) {
-                //x
                 const regexX = new RegExp("^([1-9]+)," + y + "," + z+"$");
                 const resX = [...cubePos].map(s => s.match(regexX)).filter(s => s != null).map(s => Number(s[1]));
                 if ((Math.min(...resX) < x) && (Math.max(...resX) > x)) {
