@@ -2,7 +2,7 @@ from collections import Counter
 import re
 f = open("input")
 line = f.readlines()[0].strip('\n')
-print(line)
+
 f.close()
 
 
@@ -20,7 +20,6 @@ res = 0
 it = 0
 while start < end : 
     while stLen != 0:
-        print(str(it)+"*"+str(start//2))
         res += it*(start//2)
         it+=1
         stLen-=1
@@ -28,7 +27,6 @@ while start < end :
         if endLen==0:
             end -=2
             endLen = int(line[end])
-        print(str(it)+"*"+str(end//2))
         res+= it*(end//2)
         endLen -=1
         it+=1
@@ -36,7 +34,6 @@ while start < end :
     stLen = int(line[start])
 
 for j in range(0,min(stLen,endLen)):
-    print(str(it)+"*"+str(end//2))
     res+= it*(end//2)
     it+=1
 
