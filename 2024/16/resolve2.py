@@ -6,6 +6,7 @@ f.close()
 
 map =[]
 start = []
+end = []
 pos = []
 pathes = {}
 
@@ -14,7 +15,9 @@ for line in lines :
     if "S" in line :
             y = len(map)-1
             start=[map[y].index('S'),y]
-
+    if "E" in line :
+            y = len(map)-1
+            end=[map[y].index('E'),y]
 def toStr (pos,stp):
     return str(pos)+','+str(stp)
 def toArr (st):
@@ -75,6 +78,13 @@ while res == -1 or minVal<res :
             
 s = set()
 for k in passed:
-    if passed[k]==res:
+    if str(end) in k and  passed[k]==res:
         s = s | pathes[k]
+
+for d in s :
+    sp = d.split(',')
+    map[int(sp[1][:-1])][int(sp[0][1:])]='O'
+
+for l in map:
+    print("".join(l))
 print(len(s))
