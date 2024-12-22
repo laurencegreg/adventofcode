@@ -2,8 +2,9 @@ from collections import Counter
 import re
 f = open("input")
 #part 1
-#step = 25
-step = 75
+step = 25
+#part 2
+#step = 75
 line = f.readlines()
 input = list(map(lambda x: [x,step],line[0].strip('\n').split(' ')))
 f.close()

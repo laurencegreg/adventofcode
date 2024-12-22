@@ -22,7 +22,6 @@ while len(run)!=0:
             pn = [x,y]
             st = p[1]+1
             if 0<=x<=limit and 0<=y<=limit and st<maxSteps and (not(str((pn)) in pos) or pos[str(pn)]>st):
-                print([pn,st])
                 run.insert(0,[pn,st])
                 pos[str(pn)]=st
             if str(pn)==end:
